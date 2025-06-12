@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Benvenuto Istruttore, {{ utente.first_name }}</h2>
+<p>Gestisci le tue attività sportive dal menu laterale o dall’admin.</p>
+<a href="/utenti/logout/" class="btn btn-danger">Logout</a>
+{% endblock %}

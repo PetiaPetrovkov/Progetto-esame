@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load form_filters %}
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow p-4 mx-auto" style="max-width: 600px;">
+        <h2 class="text-center mb-4">Scrivi una Recensione</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Attività:</label>
+                {{ form.attivita|add_class:"form-select" }}
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Testo della recensione:</label>
+                {{ form.testo|add_class:"form-control" }}
+            </div>
+            <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-warning">Invia Recensione</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+

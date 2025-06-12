@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Le mie Attività</h2>
+<ul class="list-group mb-4">
+  {% for p in attivita %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      {{ p.attivita.nome }}
+      <a href="{% url 'cancella_attivita' p.id %}" class="btn btn-danger btn-sm">Annulla iscrizione</a>
+    </li>
+  {% empty %}
+    <li class="list-group-item">Nessuna attività registrata.</li>
+  {% endfor %}
+</ul>
+
+<h2>I miei Tornei</h2>
+<ul class="list-group">
+  {% for p in tornei %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      {{ p.torneo.nome_torneo }}
+      <a href="{% url 'cancella_torneo' p.id %}" class="btn btn-danger btn-sm">Annulla iscrizione</a>
+    </li>
+  {% empty %}
+    <li class="list-group-item">Nessun torneo registrato.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

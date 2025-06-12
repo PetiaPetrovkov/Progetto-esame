@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load form_filters %}
+
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow p-5" style="min-width: 350px;">
+        <h2 class="text-center mb-4">Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="{{ form.username.id_for_label }}" class="form-label">Nome utente</label>
+                {{ form.username|add_class:"form-control" }}
+            </div>
+            <div class="mb-3">
+                <label for="{{ form.password.id_for_label }}" class="form-label">Password</label>
+                {{ form.password|add_class:"form-control" }}
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Accedi</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

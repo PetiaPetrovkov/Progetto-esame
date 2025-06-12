@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Benvenuto Gestore, {{ utente.first_name }}</h2>
+<p>Gestisci i tornei a cui sei assegnato. Puoi farlo anche dal pannello admin.</p>
+<a href="/utenti/logout/" class="btn btn-danger">Logout</a>
+{% endblock %}
